@@ -743,6 +743,34 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   gap: 2rem;
 }
 
+.project-deel-header {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(25, 37, 170, 0.15);
+}
+
+.project-deel-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.35;
+}
+
+.project-deel-titel {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+}
+
 .project-details-label {
   font-size: 0.9rem;
   font-weight: 700;
@@ -1215,6 +1243,74 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   border: none;
   display: block;
   transform-origin: top left;
+}
+
+/* ── Klik-hint indicator ── */
+.gr-hint {
+  position: absolute;
+  right: 3.8%;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.gr-hint::before,
+.gr-hint::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #C87941;
+}
+
+.gr-hint::before {
+  opacity: 0.9;
+  width: 10px;
+  height: 10px;
+  top: 4px;
+  left: 4px;
+}
+
+.gr-hint::after {
+  animation: gr-ping 1.6s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes gr-ping {
+  0%   { transform: scale(0.6); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ── Scroll laptop (PNG) ── */
+.laptop-scroll-outer {
+  position: relative;
+  height: 400vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.laptop-scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.macbook-scroll-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+}
+
+.macbook-scroll-img {
+  width: 100%;
+  display: block;
+  will-change: transform;
 }
 
 /* ── Miro embed ── */
@@ -2033,6 +2129,119 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
 .boekje-wrapper.heeft-achterkant .boekje::after {
   display: none;
 }
+
+/* ── Landscape boekje (typografie) ── */
+.typo-viewer-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 2000px;
+}
+
+.typo-viewer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2722 / 745;
+  border-radius: 3px 10px 10px 3px;
+}
+
+.typo-viewer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 100%;
+  background: rgba(25, 37, 170, 0.08);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.typo-viewer-pagina {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #f2efe9;
+}
+
+.typo-viewer-pagina--links {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  box-shadow: -6px 8px 40px rgba(25, 37, 170, 0.13);
+}
+
+.typo-viewer-pagina--rechts {
+  right: 0;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 6px 8px 40px rgba(25, 37, 170, 0.15);
+}
+
+.typo-viewer-flip {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: 5;
+  opacity: 0;
+}
+
+.typo-viewer-flip-voor,
+.typo-viewer-flip-achter {
+  position: absolute;
+  inset: 0;
+  background: #f2efe9;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.typo-viewer-flip-voor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.08) 35%, transparent 65%);
+  pointer-events: none;
+}
+
+.typo-viewer-flip-achter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.06) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+.typo-viewer-flip-achter {
+  transform: rotateY(180deg);
+}
+
+/* Omslag: wrapper smaller, single landscape page */
+.typo-viewer-wrapper.heeft-omslag,
+.typo-viewer-wrapper.heeft-achterkant {
+  max-width: 500px;
+}
+
+.typo-viewer-wrapper.heeft-omslag .typo-viewer,
+.typo-viewer-wrapper.heeft-achterkant .typo-viewer {
+  aspect-ratio: 1361 / 745;
+  border-radius: 10px;
+}
+
+.typo-viewer-wrapper.heeft-omslag .typo-viewer-pagina--links { display: none; }
+.typo-viewer-wrapper.heeft-omslag .typo-viewer-pagina--rechts {
+  width: 100%;
+  border-radius: 10px;
+}
+.typo-viewer-wrapper.heeft-omslag .typo-viewer::after { display: none; }
+
+.typo-viewer-wrapper.heeft-achterkant .typo-viewer-pagina--rechts { display: none; }
+.typo-viewer-wrapper.heeft-achterkant .typo-viewer-pagina--links {
+  width: 100%;
+  border-radius: 10px;
+}
+.typo-viewer-wrapper.heeft-achterkant .typo-viewer::after { display: none; }
 
 /* ── Skill preview ── */
 .skill-preview {

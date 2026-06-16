@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Typografie — Studio An</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="project-body-page">
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">AvdB ©</a>
+    <button class="nav-menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <div class="menu-overlay" id="menuOverlay">
+    <nav class="menu-nav">
+      <ul class="menu-links">
+        <li><a href="index.html" class="menu-link"><span class="menu-num">01</span>HOME</a></li>
+        <li><a href="over-mij.html" class="menu-link"><span class="menu-num">02</span>OVER MIJ</a></li>
+        <li><a href="werk.html" class="menu-link"><span class="menu-num">03</span>PROJECTEN</a></li>
+        <li><a href="laten-we-praten.html" class="menu-link"><span class="menu-num">04</span>LATEN WE PRATEN</a></li>
+      </ul>
+      <div class="menu-socials">
+        <a href="https://www.instagram.com/_.studioan_/" target="_blank" class="menu-social-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/anne-van-den-born-066b76208/" target="_blank" class="menu-social-link">LinkedIn</a>
+      </div>
+    </nav>
+  </div>
+
+  <section class="project-hero">
+    <h1 class="project-hero-titel">TYPOGRAFIE</h1>
+  </section>
+
+  <div class="project-content">
+    <a href="werk.html" class="project-terug-link">&larr; Terug naar alle projecten</a>
+
+    <!-- Deel 1 -->
+    <div class="project-deel-header">
+      <span class="project-deel-num">01</span>
+      <span class="project-deel-titel">Good Time Date</span>
+    </div>
+
+    <div class="project-body">
+      <div class="project-links">
+        <p class="project-details-label">Project Details</p>
+        <p class="project-omschrijving">
+          Omschrijving volgt.
+        </p>
+
+        <div class="project-meta">
+          <div class="project-meta-rij">
+            <span class="project-meta-label">Klant</span>
+            <span class="project-meta-waarde">Hogeschool van Amsterdam</span>
+          </div>
+          <div class="project-meta-rij">
+            <span class="project-meta-label">Jaar</span>
+            <span class="project-meta-waarde">2026</span>
+          </div>
+          <div class="project-meta-rij">
+            <span class="project-meta-label">Diensten</span>
+            <span class="project-meta-waarde">Grafisch Ontwerp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-hoofdfoto lightbox-trigger" data-index="0" style="background-image: url('images/typografie/goodtimedate.png'); background-size: cover; background-position: center;"></div>
+    </div>
+
+    <div class="project-breedte-foto lightbox-trigger" data-index="1" style="aspect-ratio: 3/2; background-image: url('images/typografie/goodtimedatevast.jpeg'); background-size: cover; background-position: center;"></div>
+
+    <div class="project-tekst-blok">
+      <p class="project-details-label">Proces</p>
+      <div class="project-tekst-blok-teksten">
+        <p class="project-omschrijving">Procestekst volgt.</p>
+      </div>
+    </div>
+
+    <!-- Deel 2 -->
+    <div class="project-deel-header">
+      <span class="project-deel-num">02</span>
+      <span class="project-deel-titel">Show Your Face</span>
+    </div>
+
+    <div class="project-body">
+      <div class="project-links">
+        <p class="project-details-label">Project Details</p>
+        <p class="project-omschrijving">
+          Omschrijving volgt.
+        </p>
+
+        <div class="project-meta">
+          <div class="project-meta-rij">
+            <span class="project-meta-label">Jaar</span>
+            <span class="project-meta-waarde">2026</span>
+          </div>
+          <div class="project-meta-rij">
+            <span class="project-meta-label">Diensten</span>
+            <span class="project-meta-waarde">Grafisch Ontwerp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-hoofdfoto" style="background-image: url('images/typografie/mockup-showyourface.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+
+    <div class="bladerdoor-sectie" id="bladerdoor">
+      <span class="bladerdoor-label">Blader er doorheen</span>
+
+      <div class="typo-viewer-wrapper heeft-omslag" id="typoWrapper">
+        <div class="typo-viewer" id="typoViewer">
+          <div class="typo-viewer-pagina typo-viewer-pagina--links" id="typoLinks"></div>
+          <div class="typo-viewer-pagina typo-viewer-pagina--rechts" id="typoRechts"></div>
+          <div class="typo-viewer-flip" id="typoFlip">
+            <div class="typo-viewer-flip-voor" id="typoFlipVoor"></div>
+            <div class="typo-viewer-flip-achter" id="typoFlipAchter"></div>
+          </div>
+        </div>
+        <div class="boekje-nav">
+          <button class="boekje-btn" id="typoVorig" disabled>←</button>
+          <span class="boekje-teller" id="typoTeller">Omslag</span>
+          <button class="boekje-btn" id="typoVolgend">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tekst-blok">
+      <p class="project-details-label">Proces</p>
+      <div class="project-tekst-blok-teksten">
+        <p class="project-omschrijving">Procestekst volgt.</p>
+      </div>
+    </div>
+
+    <div class="project-bekijk-ook">
+      <span class="project-bekijk-ook-label">Bekijk ook</span>
+      <div class="project-bekijk-ook-grid">
+        <a href="goldenr-roast.html" class="project-bekijk-ook-item">
+          <div class="project-bekijk-ook-img"><div class="project-bekijk-ook-zoom"></div></div>
+          <div class="project-bekijk-ook-meta">
+            <span class="project-bekijk-ook-title">GOLDEN ROAST</span>
+            <span class="project-bekijk-ook-year">© 26</span>
+          </div>
+        </a>
+        <a href="visual-language.html" class="project-bekijk-ook-item">
+          <div class="project-bekijk-ook-img"><div class="project-bekijk-ook-zoom"></div></div>
+          <div class="project-bekijk-ook-meta">
+            <span class="project-bekijk-ook-title">VISUAL LANGUAGE</span>
+            <span class="project-bekijk-ook-year">© 26</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-sluiten" id="lightboxSluiten">✕</button>
+    <button class="lightbox-pijl lightbox-pijl--links" id="lightboxLinks">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <button class="lightbox-pijl lightbox-pijl--rechts" id="lightboxRechts">&#8250;</button>
+    <span class="lightbox-teller" id="lightboxTeller"></span>
+  </div>
+
+  <section class="laten-cta">
+    <div class="laten-tekst-wrap">
+      <span class="laten-titel">LATEN WE PRATEN</span>
+    </div>
+  </section>
+
+  <div class="laten-space">
+    <a href="laten-we-praten.html" class="laten-afspraak">
+      <svg class="arrow" viewBox="0 0 50 50" fill="none">
+        <path d="M 42 5 C 40 26 20 42 8 46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M 14 38 L 8 46 L 18 45" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="handwritten">Maak een afspraak</span>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <span class="footer-logo">STUDIO AN</span>
+    <span class="footer-copy">&copy; 2025 Anne van den Born</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  (function () {
+    const fotos = [
+      'images/typografie/goodtimedate.png',
+      'images/typografie/goodtimedatevast.jpeg',
+    ];
+
+    const lightbox   = document.getElementById('lightbox');
+    const img        = document.getElementById('lightboxImg');
+    const teller     = document.getElementById('lightboxTeller');
+    const btnSluiten = document.getElementById('lightboxSluiten');
+    const btnLinks   = document.getElementById('lightboxLinks');
+    const btnRechts  = document.getElementById('lightboxRechts');
+    let huidig = 0;
+
+    function updateUI() {
+      img.src = fotos[huidig];
+      teller.textContent = (huidig + 1) + ' / ' + fotos.length;
+      btnLinks.disabled  = huidig === 0;
+      btnRechts.disabled = huidig === fotos.length - 1;
+    }
+
+    function open(index) {
+      huidig = index;
+      lightbox.classList.add('actief');
+      document.body.style.overflow = 'hidden';
+      updateUI();
+    }
+
+    function sluit() {
+      lightbox.classList.remove('actief');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.lightbox-trigger').forEach(el => {
+      el.addEventListener('click', () => open(parseInt(el.dataset.index)));
+    });
+
+    btnSluiten.addEventListener('click', sluit);
+    btnLinks.addEventListener('click',  () => { huidig--; updateUI(); });
+    btnRechts.addEventListener('click', () => { huidig++; updateUI(); });
+    lightbox.addEventListener('click',  e  => { if (e.target === lightbox) sluit(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('actief')) return;
+      if (e.key === 'ArrowLeft'  && huidig > 0)                { huidig--; updateUI(); }
+      if (e.key === 'ArrowRight' && huidig < fotos.length - 1) { huidig++; updateUI(); }
+      if (e.key === 'Escape') sluit();
+    });
+  })();
+  </script>
+  <script>
+  (function () {
+    function img(n) {
+      return 'images/typografie/pagina-' + String(n).padStart(2, '0') + '.png';
+    }
+    function pd(n, side) { return { src: img(n), side: side }; }
+
+    // l = linker pagina-data, r = rechter pagina-data
+    // 'full'  → enkelvoudige pagina (omslag / achterkant), background-size: cover
+    // 'left'  → linkse helft van de spread-afbeelding, background-size: 200%
+    // 'right' → rechtse helft van de spread-afbeelding, background-size: 200%
+    const spreads = [
+      { l: null,          r: pd(1,  'full')  }, // omslag
+      { l: pd(2,  'left'), r: pd(2,  'right') },
+      { l: pd(3,  'left'), r: pd(3,  'right') },
+      { l: pd(4,  'left'), r: pd(4,  'right') },
+      { l: pd(5,  'left'), r: pd(5,  'right') },
+      { l: pd(6,  'left'), r: pd(6,  'right') },
+      { l: pd(7,  'left'), r: pd(7,  'right') },
+      { l: pd(8,  'left'), r: pd(8,  'right') },
+      { l: pd(9,  'left'), r: pd(9,  'right') },
+      { l: pd(10, 'left'), r: pd(10, 'right') },
+      { l: pd(11, 'left'), r: pd(11, 'right') },
+      { l: pd(12, 'left'), r: pd(12, 'right') },
+      { l: pd(13, 'full'), r: null            }, // achterkant
+    ];
+
+    let current   = 0;
+    let animating = false;
+
+    const wrapperEl  = document.getElementById('typoWrapper');
+    const linksEl    = document.getElementById('typoLinks');
+    const rechtsEl   = document.getElementById('typoRechts');
+    const flip       = document.getElementById('typoFlip');
+    const flipVoor   = document.getElementById('typoFlipVoor');
+    const flipAchter = document.getElementById('typoFlipAchter');
+    const btnVorig   = document.getElementById('typoVorig');
+    const btnVolgend = document.getElementById('typoVolgend');
+    const teller     = document.getElementById('typoTeller');
+
+    function setPage(el, data) {
+      if (!data) { el.style.backgroundImage = ''; return; }
+      el.style.backgroundImage = 'url("' + data.src + '")';
+      if (data.side === 'left') {
+        el.style.backgroundSize     = '200% 100%';
+        el.style.backgroundPosition = 'left center';
+      } else if (data.side === 'right') {
+        el.style.backgroundSize     = '200% 100%';
+        el.style.backgroundPosition = 'right center';
+      } else {
+        el.style.backgroundSize     = 'cover';
+        el.style.backgroundPosition = 'center';
+      }
+      el.style.backgroundRepeat = 'no-repeat';
+    }
+
+    function render() {
+      const s = spreads[current];
+      setPage(linksEl,  s.l);
+      setPage(rechtsEl, s.r);
+      wrapperEl.classList.toggle('heeft-omslag',     s.l === null);
+      wrapperEl.classList.toggle('heeft-achterkant', s.r === null);
+      btnVorig.disabled   = current === 0;
+      btnVolgend.disabled = current === spreads.length - 1;
+      teller.textContent  =
+        s.l === null ? 'Omslag'
+        : s.r === null ? 'Achterkant'
+        : 'Pagina’s ' + (current * 2) + '–' + (current * 2 + 1);
+    }
+
+    function doFlip(kant, pagVoor, pagAchter, onDone) {
+      const naarLinks = kant === 'rechts';
+      flip.style.left          = naarLinks ? 'auto' : '0';
+      flip.style.right         = naarLinks ? '0'    : 'auto';
+      flip.style.transformOrigin = naarLinks ? 'left center' : 'right center';
+      flip.style.borderRadius  = naarLinks ? '0 10px 10px 0' : '3px 0 0 3px';
+      flip.style.transition    = 'none';
+      flip.style.transform     = 'rotateY(0deg)';
+      flip.style.opacity       = '1';
+
+      setPage(flipVoor,   pagVoor);
+      setPage(flipAchter, pagAchter);
+
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        flip.style.transition = 'transform 0.82s cubic-bezier(0.33, 0, 0.2, 1)';
+        flip.style.transform  = naarLinks ? 'rotateY(-180deg)' : 'rotateY(180deg)';
+      }));
+
+      setTimeout(() => {
+        flip.style.opacity    = '0';
+        flip.style.transition = 'none';
+        flip.style.transform  = 'rotateY(0deg)';
+        onDone();
+      }, 830);
+    }
+
+    function goNext() {
+      if (animating || current >= spreads.length - 1) return;
+      animating = true;
+      const cur  = spreads[current];
+      const next = spreads[current + 1];
+      wrapperEl.classList.remove('heeft-omslag');
+      setPage(linksEl,  next.l);
+      setPage(rechtsEl, next.r);
+      doFlip('rechts', cur.r, next.l, () => { current++; render(); animating = false; });
+    }
+
+    function goPrev() {
+      if (animating || current <= 0) return;
+      animating = true;
+      const cur  = spreads[current];
+      const prev = spreads[current - 1];
+      wrapperEl.classList.remove('heeft-achterkant');
+      setPage(linksEl,  prev.l);
+      setPage(rechtsEl, prev.r);
+      doFlip('links', cur.l, prev.r, () => { current--; render(); animating = false; });
+    }
+
+    btnVolgend.addEventListener('click', goNext);
+    btnVorig.addEventListener('click',   goPrev);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') goNext();
+      if (e.key === 'ArrowLeft')  goPrev();
+    });
+
+    render();
+  })();
+  </script>
+</body>
+</html>
