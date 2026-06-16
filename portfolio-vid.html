@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Portfolio Visual Interface Design — Studio An</title>
+  <title>Public City Jazz — Studio An</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Caveat:wght@500&display=swap" rel="stylesheet" />
@@ -37,7 +37,7 @@
   </div>
 
   <section class="project-hero">
-    <h1 class="project-hero-titel">PORTFOLIO VISUAL INTERFACE DESIGN</h1>
+    <h1 class="project-hero-titel">PUBLIC CITY JAZZ</h1>
   </section>
 
   <div class="project-content">
@@ -72,7 +72,7 @@
         </div>
       </div>
 
-      <div class="project-hoofdfoto lightbox-trigger" data-index="1" style="background-image: url('images/portfolio-vid/mockup.png'); background-size: 75%; background-repeat: no-repeat; background-position: center;"></div>
+      <div class="project-hoofdfoto lightbox-trigger" data-index="1" style="background-image: url('images/publiccityjazz/mockupiphonepcj.png'); background-size: 75%; background-repeat: no-repeat; background-position: center;"></div>
 
     </div>
 
@@ -84,22 +84,56 @@
       </div>
     </div>
 
-    <div class="scroll-laptop-outer" id="laptopOuter">
-      <div class="scroll-laptop-inner">
-        <div class="macbook-frame">
-          <div class="macbook-lid">
-            <div class="macbook-camera"></div>
-            <div class="macbook-scherm">
-              <img src="images/portfolio-vid/macbook.png" class="laptop-scroll-img" id="laptopScrollImg" alt="Portfolio Visual Interface Design website">
+    <div class="apparaat-sectie">
+      <div class="apparaat-sticky">
+        <div class="apparaat-kiezer">
+          <button class="apparaat-btn apparaat-btn--actief" data-apparaat="iphone">iPhone</button>
+          <button class="apparaat-btn" data-apparaat="ipad">iPad</button>
+          <button class="apparaat-btn" data-apparaat="macbook">MacBook</button>
+        </div>
+        <div class="apparaat-schermen">
+
+          <div class="apparaat-wrap apparaat-wrap--actief" id="scherm-iphone">
+            <div class="iphone-frame">
+              <div class="iphone-island"></div>
+              <div class="iphone-knop-zij"></div>
+              <div class="iphone-knop-vol-1"></div>
+              <div class="iphone-knop-vol-2"></div>
+              <div class="iphone-scherm">
+                <img src="images/publiccityjazz/iphone1314.png" class="apparaat-scroll-img" alt="Public City Jazz op iPhone">
+              </div>
             </div>
           </div>
-          <div class="macbook-basis"></div>
+
+          <div class="apparaat-wrap" id="scherm-ipad">
+            <div class="ipad-frame">
+              <div class="ipad-camera"></div>
+              <div class="ipad-knop-zij"></div>
+              <div class="ipad-knop-vol"></div>
+              <div class="ipad-scherm">
+                <img src="images/publiccityjazz/iPadPro11.png" class="apparaat-scroll-img" alt="Public City Jazz op iPad">
+              </div>
+            </div>
+          </div>
+
+          <div class="apparaat-wrap" id="scherm-macbook">
+            <div class="macbook-frame">
+              <div class="macbook-lid">
+                <div class="macbook-camera"></div>
+                <div class="macbook-scherm">
+                  <img src="images/publiccityjazz/MacBookPro16.png" class="apparaat-scroll-img" alt="Public City Jazz op MacBook">
+                </div>
+              </div>
+              <div class="macbook-basis"></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <div class="project-breedte-foto lightbox-trigger" data-index="0" style="background-image: url('images/portfolio-vid/overzicht.png'); background-size: cover; background-position: center;"></div>
 
+    <div class="project-breedte-foto lightbox-trigger" data-index="0" style="background-color: #ffffff; background-image: url('images/publiccityjazz/dr-vormgeving.png'); background-size: 80%; background-repeat: no-repeat; background-position: center;"></div>
 
     <div class="project-bekijk-ook">
       <span class="project-bekijk-ook-label">Bekijk ook</span>
@@ -163,8 +197,8 @@
   <script>
   (function () {
     const fotos = [
-      'images/portfolio-vid/overzicht.png',
-      'images/portfolio-vid/mockup.png',
+      'images/publiccityjazz/dr-vormgeving.png',
+      'images/publiccityjazz/mockupiphonepcj.png',
     ];
 
     const lightbox   = document.getElementById('lightbox');
@@ -212,33 +246,18 @@
   })();
   </script>
   <script>
-  // Scroll-driven MacBook animation
   (function () {
-    const outer = document.getElementById('laptopOuter');
-    const img   = document.getElementById('laptopScrollImg');
-    if (!outer || !img) return;
+    const btns    = document.querySelectorAll('.apparaat-btn');
+    const schermen = document.querySelectorAll('.apparaat-wrap');
 
-    function update() {
-      const rect      = outer.getBoundingClientRect();
-      const outerH    = outer.offsetHeight;
-      const viewH     = window.innerHeight;
-      const scrolled  = -rect.top;
-      const maxScroll = outerH - viewH;
-      const progress  = Math.max(0, Math.min(1, scrolled / maxScroll));
-
-      const scherm   = img.parentElement;
-      const natRatio = img.naturalHeight && img.naturalWidth
-        ? img.naturalHeight / img.naturalWidth
-        : 2.5;
-      const imgH     = scherm.offsetWidth * natRatio;
-      const maxTrans = Math.max(0, imgH - scherm.offsetHeight);
-      img.style.transform = `translateY(-${progress * maxTrans}px)`;
-    }
-
-    img.addEventListener('load', update);
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('apparaat-btn--actief'));
+        schermen.forEach(s => s.classList.remove('apparaat-wrap--actief'));
+        btn.classList.add('apparaat-btn--actief');
+        document.getElementById('scherm-' + btn.dataset.apparaat).classList.add('apparaat-wrap--actief');
+      });
+    });
   })();
   </script>
 </body>

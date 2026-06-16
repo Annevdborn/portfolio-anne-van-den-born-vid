@@ -849,22 +849,18 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
 
 /* ── Device switcher ── */
 .apparaat-sectie {
-  position: relative;
-  height: 280vh;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
 
 .apparaat-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  padding: 4rem 0;
 }
 
 .apparaat-kiezer {
@@ -982,8 +978,12 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   inset: 1.5% 2%;
   background: #fff;
   border-radius: 36px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.iphone-scherm::-webkit-scrollbar { display: none; }
 
 /* iPad (landscape) */
 .ipad-frame {
@@ -1035,8 +1035,12 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   inset: 6% 5%;
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.ipad-scherm::-webkit-scrollbar { display: none; }
 
 /* MacBook */
 .macbook-frame {
@@ -1076,8 +1080,12 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   right: 1%;
   bottom: 0;
   background: #fff;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.macbook-scherm::-webkit-scrollbar { display: none; }
 
 .macbook-basis {
   width: 110%;
