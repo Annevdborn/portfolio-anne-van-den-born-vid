@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Laten We Praten — Studio An</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">AvdB ©</a>
+    <button class="nav-menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <div class="menu-overlay" id="menuOverlay">
+    <nav class="menu-nav">
+      <ul class="menu-links">
+        <li><a href="index.html" class="menu-link"><span class="menu-num">01</span>HOME</a></li>
+        <li><a href="over-mij.html" class="menu-link"><span class="menu-num">02</span>OVER MIJ</a></li>
+        <li><a href="werk.html" class="menu-link"><span class="menu-num">03</span>PROJECTEN</a></li>
+        <li><a href="laten-we-praten.html" class="menu-link"><span class="menu-num">04</span>LATEN WE PRATEN</a></li>
+      </ul>
+      <div class="menu-socials">
+        <a href="https://www.instagram.com/_.studioan_/" target="_blank" class="menu-social-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/anne-van-den-born-066b76208/" target="_blank" class="menu-social-link">LinkedIn</a>
+      </div>
+    </nav>
+  </div>
+
+  <main class="contact-pagina">
+
+    <div class="contact-header">
+      <h1 class="contact-heading">LATEN WE<br>PRATEN</h1>
+      <p class="contact-intro">Heb je een project in gedachten, een vraag of gewoon zin om even te sparren? Stuur me een bericht — ik hoor graag van je.</p>
+    </div>
+
+    <div class="contact-body">
+
+      <div class="contact-blokken">
+        <a href="mailto:annevdborn@live.nl" class="contact-blok">
+          <span class="contact-blok-label">E-MAIL</span>
+          <span class="contact-blok-waarde">annevdborn@live.nl</span>
+          <span class="contact-blok-actie">Stuur een mail →</span>
+        </a>
+
+        <a href="tel:+31600000000" class="contact-blok">
+          <span class="contact-blok-label">TELEFOON</span>
+          <span class="contact-blok-waarde">+31 6 53 59 58 75</span>
+          <span class="contact-blok-actie">Bel me →</span>
+        </a>
+
+        <a href="https://www.instagram.com/_.studioan_/" target="_blank" class="contact-blok">
+          <span class="contact-blok-label">INSTAGRAM</span>
+          <span class="contact-blok-waarde">@_.studioan_</span>
+          <span class="contact-blok-actie">Volg me →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/anne-van-den-born-066b76208/" target="_blank" class="contact-blok">
+          <span class="contact-blok-label">LINKEDIN</span>
+          <span class="contact-blok-waarde">Anne van den Born</span>
+          <span class="contact-blok-actie">Verbind met me →</span>
+        </a>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-rij">
+          <div class="form-veld">
+            <label for="naam">NAAM</label>
+            <input type="text" id="naam" name="naam" placeholder="Jouw naam" />
+          </div>
+          <div class="form-veld">
+            <label for="email">E-MAIL</label>
+            <input type="email" id="email" name="email" placeholder="jouw@email.nl" />
+          </div>
+        </div>
+        <div class="form-veld">
+          <label for="bericht">BERICHT</label>
+          <textarea id="bericht" name="bericht" rows="5" placeholder="Vertel me over je project..."></textarea>
+        </div>
+        <button type="submit" class="form-btn">VERSTUUR BERICHT</button>
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
